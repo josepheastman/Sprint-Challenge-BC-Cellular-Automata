@@ -38,7 +38,7 @@ def valid_proof(last_hash, proof):
 
     IE:  last_hash: ...999123456, new hash 123456888...
     """
-    guess = f'{last_proof}{proof}'.encode()
+    guess = f'{last_hash}{proof}'.encode()
     guess_hash = hashlib.sha256(guess).hexdigest()
     beg = guess_hash[0:6]
     if beg == "000000":
